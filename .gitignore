@@ -1,0 +1,7 @@
+*.suo
+App_Data
+*.csproj.user
+*.Publish.xml
+obj
+bin
+

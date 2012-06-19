@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="HomeAuto.HomeAutoClient" CodeBehind="HomeAutoClient.svc.cs" %>
