@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HomeAutoClient.svc" />
+    <Content Include="index.html" />
     <Content Include="lib\Interop.ActiveHomeScriptLib.dll" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -78,6 +79,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Authenticator.cs" />
     <Compile Include="HomeAutoClient.svc.cs">
       <DependentUpon>HomeAutoClient.svc</DependentUpon>
     </Compile>
