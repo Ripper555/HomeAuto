@@ -66,7 +66,7 @@ namespace HomeAuto
             app.Response.Clear();
             app.Response.StatusCode = 401;
             app.Response.StatusDescription = "Unauthorized";
-            app.Response.AddHeader("WWW-Authenticate", "Basic Realm=\"FoodTracker\"");
+            app.Response.AddHeader("WWW-Authenticate", "Basic Realm=\"HomeAuto\"");
             app.Response.Write("Unauthorized");
             app.Response.End();
         }
