@@ -16,6 +16,9 @@ namespace HomeAuto
         {
             var app = (HttpApplication)source;
 
+            if (app.Request.UserHostAddress.StartsWith("192.168.1"))
+                return;
+
             var url = app.Request.RawUrl.ToLower();
 
             AuthenticateServicesRequest(app);
