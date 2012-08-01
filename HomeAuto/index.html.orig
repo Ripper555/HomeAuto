@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿<html>
 <head>
     <title></title>
@@ -102,6 +103,115 @@
                     break;
             }
 
+        $.getJSON('/HomeAuto/HomeAutoClient.svc/x10'+ parameters, function (data) {
+            $('#results').prepend(data.Outcome + ': ' + data.Message + '<br/>');
+        });
+
+            return false;
+        });
+    })
+
+</script>
+</body>
+</html>
+=======
+﻿<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.min.js"></script>
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <style type="text/css">
+        .on.ui-state-hover
+        {
+            border: 1px solid #88d83b;
+            background: #4eb305;
+            color: white;
+        }
+        .off.ui-state-hover
+        {
+            border: 1px solid #f96666;
+            background: #e60f0f;
+            color: white;
+        }
+        .dim.ui-state-hover, .bright.ui-state-hover
+        {
+            border: 1px solid #89f3fa;
+            background: #14deeb;
+            color: white;
+        }
+    </style>
+    <meta name='viewport' content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' />
+</head>
+<body>
+    <table border="0">
+        <tr><td>Bedroom AC</td><td><button id="bdac-on" class="on">On</button></td><td><button id="bdac-off" class="off">Off</button></td></tr>
+        <tr><td>Living Room AC</td><td><button id="lrac-on" class="on">On</button></td><td><button id="lrac-off" class="off">Off</button></td></tr>
+        <tr><td>Lamp</td><td><button id="lp-on" class="on">On</button></td><td><button id="lp-off" class="off">Off</button></td></tr>
+        <tr><td>Dining Room Light</td><td><button id="drl-on" class="on">On</button></td><td><button id="drl-off" class="off">Off</button></td></tr>
+        <tr><td>Bedroom Light</td><td><button id="bdl-on" class="on">On</button></td><td><button id="bdl-off" class="off">Off</button></td></tr>
+        <tr><td>All Units</td><td></td><td><button id="alloff" class="off">Off</button></td><td></td><td></td></tr>
+        <tr><td>All Lights</td><td><button id="lightson" class="on">On</button></td><td><button id="lightsoff" class="off">Off</button></td></tr>
+        <tr><td>Bright/Dim</td><td align="center"><button id="lp-bright" class="bright">↑</button></td><td align="center"><button id="lp-dim" class="dim">↓</button></td></tr>
+    </table>
+    <div id="results">
+    </div>
+<script type="text/javascript">
+    $(function () {
+        $("button").button();
+
+        $("button").click(function () {
+            var parameters = "";
+            switch ($(this).attr('id')) {
+                case "bdac-on":
+                    parameters = "/a/2/on";
+                    break;
+                case "bdac-off":
+                    parameters = "/a/2/off";
+                    break;
+                case "lrac-on":
+                    parameters = "/a/3/on";
+                    break;
+                case "lrac-off":
+                    parameters = "/a/3/off";
+                    break;
+                case "lp-on":
+                    parameters = "/a/1/on";
+                    break;
+                case "lp-off":
+                    parameters = "/a/1/off";
+                    break;
+                case "lp-bright":
+                    parameters = "/a/1/bright";
+                    break;
+                case "lp-dim":
+                    parameters = "/a/1/dim";
+                    break;
+                case "drl-on":
+                    parameters = "/a/4/on";
+                    break;
+                case "drl-off":
+                    parameters = "/a/4/off";
+                    break;
+                case "bdl-on":
+                    parameters = "/a/5/on";
+                    break;
+                case "bdl-off":
+                    parameters = "/a/5/off";
+                    break;
+                case "alloff":
+                    parameters = "/a/allunits/off";
+                    break;
+                case "lightson":
+                    parameters = "/a/alllights/on";
+                    break;
+                case "lightsoff":
+                    parameters = "/a/alllights/off";
+                    break;
+                default:
+                    break;
+            }
+
         var noCache = Date();
         $.getJSON('/HomeAuto/HomeAutoClient.svc/x10' + parameters, { "noCache": noCache }, function (data) {
             $('#results').prepend(data.Outcome + ': ' + data.Message + '<br/>');
@@ -114,3 +224,4 @@
 </script>
 </body>
 </html>
+>>>>>>> 5b6028f9b39a5e91bddea160ba6c59b0ed763880
