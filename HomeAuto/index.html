@@ -95,7 +95,8 @@
                     break;
             }
 
-        $.getJSON('/HomeAuto/HomeAutoClient.svc/x10'+ parameters, function (data) {
+        var noCache = Date();
+        $.getJSON('/HomeAuto/HomeAutoClient.svc/x10' + parameters, { "noCache": noCache }, function (data) {
             $('#results').prepend(data.Outcome + ': ' + data.Message + '<br/>');
         });
 
