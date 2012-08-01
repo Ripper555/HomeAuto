@@ -33,6 +33,7 @@
         <tr><td>Lamp</td><td><button id="lp-on" class="on">On</button></td><td><button id="lp-off" class="off">Off</button></td></tr>
         <tr><td>Dining Room Light</td><td><button id="drl-on" class="on">On</button></td><td><button id="drl-off" class="off">Off</button></td></tr>
         <tr><td>Bedroom Light</td><td><button id="bdl-on" class="on">On</button></td><td><button id="bdl-off" class="off">Off</button></td></tr>
+        <tr><td>Basement</td><td><button id="bm-on" class="on">On</button></td><td><button id="bm-off" class="off">Off</button></td></tr>
         <tr><td>All Units</td><td></td><td><button id="alloff" class="off">Off</button></td><td></td><td></td></tr>
         <tr><td>All Lights</td><td><button id="lightson" class="on">On</button></td><td><button id="lightsoff" class="off">Off</button></td></tr>
         <tr><td>Bright/Dim</td><td align="center"><button id="lp-bright" class="bright">↑</button></td><td align="center"><button id="lp-dim" class="dim">↓</button></td></tr>
@@ -81,6 +82,12 @@
                     break;
                 case "bdl-off":
                     parameters = "/a/5/off";
+                    break;
+                case "bm-on":
+                    parameters = "/a/6/on";
+                    break;
+                case "bm-off":
+                    parameters = "/a/6/off";
                     break;
                 case "alloff":
                     parameters = "/a/allunits/off";
